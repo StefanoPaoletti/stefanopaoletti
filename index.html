@@ -1,12 +1,321 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Stefano Paoletti's Website</title>
+    <title>Stefano Paoletti</title>
+    <style>
+        /* [...animazioni e stili base invariati...] */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes boatRace {
+            0% { 
+                transform: translateX(-100%) rotate(0deg);
+                filter: brightness(1);
+            }
+            25% { 
+                transform: translateX(0%) rotate(-3deg);
+                filter: brightness(1.2);
+            }
+            75% { 
+                transform: translateX(200%) rotate(3deg);
+                filter: brightness(1.5);
+            }
+            76% { 
+                transform: translateX(-100%) rotate(0deg);
+                opacity: 0;
+            }
+            77% { opacity: 1; }
+            100% { transform: translateX(-100%) rotate(0deg); }
+        }
+
+        @keyframes waterEffect {
+            0% { transform: translateX(0) scaleY(1); }
+            50% { transform: translateX(-25%) scaleY(1.1); }
+            100% { transform: translateX(-50%) scaleY(1); }
+        }
+
+        @keyframes glowText {
+            0% { text-shadow: 0 0 10px rgba(255,255,255,0.8); }
+            50% { text-shadow: 0 0 20px #ff3366, 0 0 30px #ff3366; }
+            100% { text-shadow: 0 0 10px rgba(255,255,255,0.8); }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e0f3d 0%, #4b1248 50%, #1e0f3d 100%);
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mountains-container {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 70%;
+            z-index: 1;
+        }
+
+        .mountain {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Dolomiti ridisegnate con proporzioni più naturali */
+        .mountain-1 {
+            clip-path: polygon(
+                10% 100%,
+                20% 55%,    /* Base sinistra */
+                25% 45%,    /* Prima cima */
+                30% 50%,
+                35% 40%,    /* Seconda cima */
+                40% 48%,
+                45% 35%,    /* Terza cima */
+                50% 45%,
+                55% 100%
+            );
+            background: linear-gradient(180deg, #2b2b2b 0%, #1a1a1a 100%);
+            left: -5%;
+        }
+
+        .mountain-2 {
+            clip-path: polygon(
+                35% 100%,
+                45% 50%,    /* Base sinistra */
+                50% 38%,    /* Cima principale */
+                55% 45%,
+                60% 42%,    /* Cima secondaria */
+                65% 48%,
+                70% 100%
+            );
+            background: linear-gradient(180deg, #363636 0%, #222222 100%);
+            left: 5%;
+        }
+
+        .mountain-3 {
+            clip-path: polygon(
+                55% 100%,
+                65% 48%,
+                70% 35%,    /* Cima principale */
+                75% 42%,
+                80% 45%,
+                85% 100%
+            );
+            background: linear-gradient(180deg, #404040 0%, #282828 100%);
+            left: 10%;
+        }
+
+        .snow-1 {
+            clip-path: polygon(
+                20% 55%,
+                25% 45%,
+                30% 50%,
+                35% 40%,
+                40% 48%,
+                45% 35%,
+                50% 45%,
+                48% 43%,
+                43% 38%,
+                38% 45%,
+                33% 42%,
+                28% 48%,
+                23% 50%
+            );
+            background: white;
+            opacity: 0.9;
+        }
+
+        .snow-2 {
+            clip-path: polygon(
+                45% 50%,
+                50% 38%,
+                55% 45%,
+                60% 42%,
+                65% 48%,
+                63% 45%,
+                58% 40%,
+                53% 42%,
+                48% 41%
+            );
+            background: white;
+            opacity: 0.85;
+        }
+
+        .snow-3 {
+            clip-path: polygon(
+                65% 48%,
+                70% 35%,
+                75% 42%,
+                80% 45%,
+                77% 42%,
+                73% 38%,
+                68% 45%
+            );
+            background: white;
+            opacity: 0.95;
+        }
+
+        .lake {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 35%;
+            background: linear-gradient(180deg, #00416A 0%, #000000 100%);
+            z-index: 3;
+            overflow: hidden;
+        }
+
+        .water-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                rgba(255,255,255,0.1) 0%, 
+                rgba(255,255,255,0.2) 25%, 
+                rgba(255,255,255,0.1) 50%, 
+                rgba(255,255,255,0.2) 75%, 
+                rgba(255,255,255,0.1) 100%);
+            animation: waterEffect 3s linear infinite;
+        }
+
+        .boat {
+            position: absolute;
+            bottom: 15%;
+            left: 0;
+            width: 80px;
+            height: 40px;
+            background: linear-gradient(135deg, #ff3366 0%, #ff0000 100%);
+            clip-path: polygon(0% 100%, 20% 30%, 80% 30%, 100% 100%);
+            animation: boatRace 6s linear infinite;
+            z-index: 5;
+            filter: drop-shadow(0 0 10px rgba(255, 51, 102, 0.8));
+        }
+
+        .boat::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.3);
+            filter: blur(5px);
+        }
+
+        .content {
+            position: relative;
+            z-index: 6;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 51, 102, 0.5);
+            box-shadow: 0 0 30px rgba(255, 51, 102, 0.3);
+            backdrop-filter: blur(10px);
+            transform-style: preserve-3d;
+            animation: pulse 3s infinite ease-in-out;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            background: linear-gradient(45deg, #fff 0%, #ff3366 50%, #fff 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glowText 3s infinite;
+            letter-spacing: 2px;
+        }
+
+        .passions {
+            display: flex;
+            gap: 2.5rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+            font-size: 3rem;
+        }
+
+        .passions span {
+            animation: pulse 2s infinite ease-in-out;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+        }
+
+        .passions span:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .passions span:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .construction {
+            font-size: 1.8rem;
+            margin-top: 1.5rem;
+            color: #ff3366;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: glowText 2s infinite;
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .passions {
+                font-size: 2.5rem;
+            }
+            .construction {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
-    <p>This is a simple placeholder page for stefanopaoletti.com.</p>
+    <div class="container">
+        <div class="mountains-container">
+            <div class="mountain mountain-1"></div>
+            <div class="mountain mountain-2"></div>
+            <div class="mountain mountain-3"></div>
+            <div class="mountain snow-1"></div>
+            <div class="mountain snow-2"></div>
+            <div class="mountain snow-3"></div>
+        </div>
+        <div class="lake">
+            <div class="water-effect"></div>
+        </div>
+        <div class="boat"></div>
+        
+        <div class="content">
+            <h1>STEFANO PAOLETTI</h1>
+            <div class="passions">
+                <span>🏔️</span>
+                <span>🚤</span>
+                <span>🌊</span>
+            </div>
+            <div class="construction">
+                In costruzione
+            </div>
+        </div>
+    </div>
 </body>
 </html>

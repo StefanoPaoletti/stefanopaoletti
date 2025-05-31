@@ -1,321 +1,167 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stefano Paoletti</title>
-    <style>
-        /* [...animazioni e stili base invariati...] */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Stefano Paoletti - Motonautica</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
 
-        @keyframes boatRace {
-            0% { 
-                transform: translateX(-100%) rotate(0deg);
-                filter: brightness(1);
-            }
-            25% { 
-                transform: translateX(0%) rotate(-3deg);
-                filter: brightness(1.2);
-            }
-            75% { 
-                transform: translateX(200%) rotate(3deg);
-                filter: brightness(1.5);
-            }
-            76% { 
-                transform: translateX(-100%) rotate(0deg);
-                opacity: 0;
-            }
-            77% { opacity: 1; }
-            100% { transform: translateX(-100%) rotate(0deg); }
-        }
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #001F3F, #003366);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
 
-        @keyframes waterEffect {
-            0% { transform: translateX(0) scaleY(1); }
-            50% { transform: translateX(-25%) scaleY(1.1); }
-            100% { transform: translateX(-50%) scaleY(1); }
-        }
+  header {
+    position: relative;
+    height: 60vh;
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-        @keyframes glowText {
-            0% { text-shadow: 0 0 10px rgba(255,255,255,0.8); }
-            50% { text-shadow: 0 0 20px #ff3366, 0 0 30px #ff3366; }
-            100% { text-shadow: 0 0 10px rgba(255,255,255,0.8); }
-        }
+  header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 1;
+  }
 
-        body {
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e0f3d 0%, #4b1248 50%, #1e0f3d 100%);
-            color: #fff;
-            text-align: center;
-            overflow: hidden;
-        }
+  header h1 {
+    position: relative;
+    font-size: 3.5rem;
+    z-index: 2;
+    text-shadow: 0 0 20px #ff3366;
+  }
 
-        .container {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+  main {
+    max-width: 900px;
+    margin: -4rem auto 2rem auto;
+    background: rgba(0,0,0,0.7);
+    border-radius: 12px;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 0 30px #ff3366aa;
+    flex-grow: 1;
+  }
 
-        .mountains-container {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 70%;
-            z-index: 1;
-        }
+  section {
+    margin-bottom: 2rem;
+  }
 
-        .mountain {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 100%;
-        }
+  h2 {
+    border-bottom: 2px solid #ff3366;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
 
-        /* Dolomiti ridisegnate con proporzioni più naturali */
-        .mountain-1 {
-            clip-path: polygon(
-                10% 100%,
-                20% 55%,    /* Base sinistra */
-                25% 45%,    /* Prima cima */
-                30% 50%,
-                35% 40%,    /* Seconda cima */
-                40% 48%,
-                45% 35%,    /* Terza cima */
-                50% 45%,
-                55% 100%
-            );
-            background: linear-gradient(180deg, #2b2b2b 0%, #1a1a1a 100%);
-            left: -5%;
-        }
+  p {
+    line-height: 1.5;
+    font-weight: 300;
+  }
 
-        .mountain-2 {
-            clip-path: polygon(
-                35% 100%,
-                45% 50%,    /* Base sinistra */
-                50% 38%,    /* Cima principale */
-                55% 45%,
-                60% 42%,    /* Cima secondaria */
-                65% 48%,
-                70% 100%
-            );
-            background: linear-gradient(180deg, #363636 0%, #222222 100%);
-            left: 5%;
-        }
+  ul.palmares {
+    list-style: none;
+    padding-left: 0;
+  }
 
-        .mountain-3 {
-            clip-path: polygon(
-                55% 100%,
-                65% 48%,
-                70% 35%,    /* Cima principale */
-                75% 42%,
-                80% 45%,
-                85% 100%
-            );
-            background: linear-gradient(180deg, #404040 0%, #282828 100%);
-            left: 10%;
-        }
+  ul.palmares li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #ff336633;
+  }
 
-        .snow-1 {
-            clip-path: polygon(
-                20% 55%,
-                25% 45%,
-                30% 50%,
-                35% 40%,
-                40% 48%,
-                45% 35%,
-                50% 45%,
-                48% 43%,
-                43% 38%,
-                38% 45%,
-                33% 42%,
-                28% 48%,
-                23% 50%
-            );
-            background: white;
-            opacity: 0.9;
-        }
+  /* Gallery */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+    gap: 15px;
+  }
 
-        .snow-2 {
-            clip-path: polygon(
-                45% 50%,
-                50% 38%,
-                55% 45%,
-                60% 42%,
-                65% 48%,
-                63% 45%,
-                58% 40%,
-                53% 42%,
-                48% 41%
-            );
-            background: white;
-            opacity: 0.85;
-        }
+  .gallery img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #ff3366cc;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
 
-        .snow-3 {
-            clip-path: polygon(
-                65% 48%,
-                70% 35%,
-                75% 42%,
-                80% 45%,
-                77% 42%,
-                73% 38%,
-                68% 45%
-            );
-            background: white;
-            opacity: 0.95;
-        }
+  .gallery img:hover {
+    transform: scale(1.1);
+  }
 
-        .lake {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 35%;
-            background: linear-gradient(180deg, #00416A 0%, #000000 100%);
-            z-index: 3;
-            overflow: hidden;
-        }
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: #001f3f;
+    color: #ff3366aa;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
 
-        .water-effect {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 200%;
-            height: 100%;
-            background: linear-gradient(45deg, 
-                rgba(255,255,255,0.1) 0%, 
-                rgba(255,255,255,0.2) 25%, 
-                rgba(255,255,255,0.1) 50%, 
-                rgba(255,255,255,0.2) 75%, 
-                rgba(255,255,255,0.1) 100%);
-            animation: waterEffect 3s linear infinite;
-        }
+  /* Responsive */
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 2.5rem;
+      padding: 0 1rem;
+      text-align: center;
+    }
 
-        .boat {
-            position: absolute;
-            bottom: 15%;
-            left: 0;
-            width: 80px;
-            height: 40px;
-            background: linear-gradient(135deg, #ff3366 0%, #ff0000 100%);
-            clip-path: polygon(0% 100%, 20% 30%, 80% 30%, 100% 100%);
-            animation: boatRace 6s linear infinite;
-            z-index: 5;
-            filter: drop-shadow(0 0 10px rgba(255, 51, 102, 0.8));
-        }
-
-        .boat::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 100%;
-            height: 10px;
-            background: rgba(255, 255, 255, 0.3);
-            filter: blur(5px);
-        }
-
-        .content {
-            position: relative;
-            z-index: 6;
-            padding: 2rem;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 20px;
-            border: 2px solid rgba(255, 51, 102, 0.5);
-            box-shadow: 0 0 30px rgba(255, 51, 102, 0.3);
-            backdrop-filter: blur(10px);
-            transform-style: preserve-3d;
-            animation: pulse 3s infinite ease-in-out;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            margin: 0;
-            background: linear-gradient(45deg, #fff 0%, #ff3366 50%, #fff 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glowText 3s infinite;
-            letter-spacing: 2px;
-        }
-
-        .passions {
-            display: flex;
-            gap: 2.5rem;
-            justify-content: center;
-            margin-top: 1.5rem;
-            font-size: 3rem;
-        }
-
-        .passions span {
-            animation: pulse 2s infinite ease-in-out;
-            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
-        }
-
-        .passions span:nth-child(2) {
-            animation-delay: 0.3s;
-        }
-
-        .passions span:nth-child(3) {
-            animation-delay: 0.6s;
-        }
-
-        .construction {
-            font-size: 1.8rem;
-            margin-top: 1.5rem;
-            color: #ff3366;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            animation: glowText 2s infinite;
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            .passions {
-                font-size: 2.5rem;
-            }
-            .construction {
-                font-size: 1.3rem;
-            }
-        }
-    </style>
+    main {
+      margin: -3rem 1rem 2rem 1rem;
+      padding: 1.5rem;
+    }
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="mountains-container">
-            <div class="mountain mountain-1"></div>
-            <div class="mountain mountain-2"></div>
-            <div class="mountain mountain-3"></div>
-            <div class="mountain snow-1"></div>
-            <div class="mountain snow-2"></div>
-            <div class="mountain snow-3"></div>
-        </div>
-        <div class="lake">
-            <div class="water-effect"></div>
-        </div>
-        <div class="boat"></div>
-        
-        <div class="content">
-            <h1>STEFANO PAOLETTI</h1>
-            <div class="passions">
-                <span>🏔️</span>
-                <span>🚤</span>
-                <span>🌊</span>
-            </div>
-            <div class="construction">
-                In costruzione
-            </div>
-        </div>
+
+<header>
+  <h1>Stefano Paoletti</h1>
+</header>
+
+<main>
+  <section id="bio">
+    <h2>Biografia</h2>
+    <p>
+      Stefano Paoletti è uno dei più grandi campioni italiani di motonautica, con una carriera costellata di successi nazionali e internazionali. Vice campione del mondo e campione italiano in carica, Stefano ha saputo distinguersi per la sua grinta, tecnica e dedizione, diventando un punto di riferimento per tutto il movimento.
+    </p>
+    <p>
+      La sua passione per il mare e la velocità nasce fin da giovane, e nel corso degli anni ha affinato le sue capacità, gareggiando su imbarcazioni da competizione ad altissime prestazioni. Oltre all’attività sportiva, Stefano si dedica anche alla promozione della motonautica e alla formazione dei giovani talenti.
+    </p>
+  </section>
+
+  <section id="palmares">
+    <h2>Palmarès</h2>
+    <ul class="palmares">
+      <li><strong>2023:</strong> Vice Campione del Mondo Motonautica</li>
+      <li><strong>2022:</strong> Campione Italiano Motonautica</li>
+      <li><strong>2021:</strong> Medaglia d’argento Campionato Europeo</li>
+      <li><strong>2020:</strong> Finalista Campionato Mondiale</li>
+      <li><strong>2019:</strong> Vincitore Trofeo Nazionale Motonautica</li>
+    </ul>
+  </section>
+
+  <section id="gallery">
+    <h2>Galleria Fotografica</h2>
+    <div class="gallery">
+      <!-- Sostituisci questi link con le tue foto, ad esempio da Instagram o altre fonti pubbliche -->
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=60" alt="Stefano in gara" />
+      <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=400&q=60" alt="Imbarcazione in velocità" />
+      <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=400&q=60" alt="Stefano premiato" />
     </div>
+  </section>
+</main>
+
+<footer>
+  Creato dall'AI
+</footer>
+
 </body>
 </html>

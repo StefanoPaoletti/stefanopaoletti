@@ -1,166 +1,156 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Stefano Paoletti - Motonautica</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
-
-  body {
-    margin: 0; padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #001F3F, #003366);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  header {
-    position: relative;
-    height: 60vh;
-    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  header::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    z-index: 1;
-  }
-
-  header h1 {
-    position: relative;
-    font-size: 3.5rem;
-    z-index: 2;
-    text-shadow: 0 0 20px #ff3366;
-  }
-
-  main {
-    max-width: 900px;
-    margin: -4rem auto 2rem auto;
-    background: rgba(0,0,0,0.7);
-    border-radius: 12px;
-    padding: 2rem 2.5rem;
-    box-shadow: 0 0 30px #ff3366aa;
-    flex-grow: 1;
-  }
-
-  section {
-    margin-bottom: 2rem;
-  }
-
-  h2 {
-    border-bottom: 2px solid #ff3366;
-    padding-bottom: 0.3rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-  }
-
-  p {
-    line-height: 1.5;
-    font-weight: 300;
-  }
-
-  ul.palmares {
-    list-style: none;
-    padding-left: 0;
-  }
-
-  ul.palmares li {
-    padding: 0.4rem 0;
-    border-bottom: 1px solid #ff336633;
-  }
-
-  /* Gallery */
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
-    gap: 15px;
-  }
-
-  .gallery img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #ff3366cc;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-  }
-
-  .gallery img:hover {
-    transform: scale(1.1);
-  }
-
-  footer {
-    text-align: center;
-    padding: 1rem;
-    background: #001f3f;
-    color: #ff3366aa;
-    font-weight: 600;
-    font-size: 0.9rem;
-  }
-
-  /* Responsive */
-  @media (max-width: 600px) {
-    header h1 {
-      font-size: 2.5rem;
-      padding: 0 1rem;
-      text-align: center;
-    }
-
-    main {
-      margin: -3rem 1rem 2rem 1rem;
-      padding: 1.5rem;
-    }
-  }
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Stefano Paoletti - Pilota di motonautica</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: url('https://live.staticflickr.com/HEADER_IMAGE_LINK_HERE') center center / cover no-repeat;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+        header h1 {
+            background-color: rgba(0,0,0,0.5);
+            padding: 20px;
+            font-size: 2em;
+            border-radius: 10px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        nav button {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+        }
+        nav button:hover {
+            background: #555;
+        }
+        section {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .gallery img {
+            max-width: 300px;
+            width: 100%;
+            border-radius: 8px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+            border-top: 1px solid #333;
+            margin-top: 40px;
+        }
+        .lang {
+            display: none;
+        }
+    </style>
+    <script>
+        function setLanguage(lang) {
+            document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'block');
+        }
+        window.onload = function() {
+            setLanguage('it'); // default to Italian
+        };
+    </script>
 </head>
 <body>
 
 <header>
-  <h1>Stefano Paoletti</h1>
+    <h1>Stefano Paoletti - Pilota di motonautica</h1>
 </header>
 
-<main>
-  <section id="bio">
-    <h2>Biografia</h2>
-    <p>
-      Stefano Paoletti è uno dei più grandi campioni italiani di motonautica, con una carriera costellata di successi nazionali e internazionali. Vice campione del mondo e campione italiano in carica, Stefano ha saputo distinguersi per la sua grinta, tecnica e dedizione, diventando un punto di riferimento per tutto il movimento.
-    </p>
-    <p>
-      La sua passione per il mare e la velocità nasce fin da giovane, e nel corso degli anni ha affinato le sue capacità, gareggiando su imbarcazioni da competizione ad altissime prestazioni. Oltre all’attività sportiva, Stefano si dedica anche alla promozione della motonautica e alla formazione dei giovani talenti.
-    </p>
-  </section>
+<nav>
+    <button onclick="setLanguage('it')">🇮🇹 Italiano</button>
+    <button onclick="setLanguage('en')">🇬🇧 English</button>
+</nav>
 
-  <section id="palmares">
-    <h2>Palmarès</h2>
-    <ul class="palmares">
-      <li><strong>2023:</strong> Vice Campione del Mondo Motonautica</li>
-      <li><strong>2022:</strong> Campione Italiano Motonautica</li>
-      <li><strong>2021:</strong> Medaglia d’argento Campionato Europeo</li>
-      <li><strong>2020:</strong> Finalista Campionato Mondiale</li>
-      <li><strong>2019:</strong> Vincitore Trofeo Nazionale Motonautica</li>
-    </ul>
-  </section>
+<section>
+    <div class="lang lang-it">
+        <h2>Biografia</h2>
+        <p>Stefano Paoletti, nato a Miane (TV), è uno dei più brillanti piloti italiani di motonautica degli ultimi anni...</p>
+        <h2>Palmarès</h2>
+        <p>Formula 1000 Inshore<br/>
+        • 2011: 1° Campionato Italiano<br/>
+        • 2010: 1° Trofeo FIM, 2° Mondiale F1000<br/>
+        • 2013: 3° Coppa del Mondo F1000<br/>
+        • Numerosi piazzamenti Top 5 2008-2012</p>
+        <p>UIM Nations Cup<br/>
+        • Abu Dhabi 2013: Vittoria Match Race, 3° Sprint 2, 2° Team<br/>
+        • Doha 2014: Pole, Vittoria Match Race, Vittorie Sprint 1 e 2, 2° Team per 1 punto</p>
 
-  <section id="gallery">
-    <h2>Galleria Fotografica</h2>
-    <div class="gallery">
-      <!-- Sostituisci questi link con le tue foto, ad esempio da Instagram o altre fonti pubbliche -->
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=60" alt="Stefano in gara" />
-      <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=400&q=60" alt="Imbarcazione in velocità" />
-      <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=400&q=60" alt="Stefano premiato" />
+        <h2>Press & Media</h2>
+        <ul>
+            <li><a href="https://www.gulf-times.com/story/384489/paoletti-wins-sprints-as-belarus-take-nations-cup" target="_blank">Gulf Times - Paoletti wins sprints</a></li>
+            <li><a href="https://www.h2onationscup.com/post/brilliant-paoletti-wins-sprint-races-team-belarus-win-nations-cup-in-qatar" target="_blank">H2O Nations Cup - Sprint Races Doha</a></li>
+            <li><a href="https://www.boatmag.it/nations-cup-di-motonautica-inshore-stefano-paoletti-secondo/" target="_blank">BoatMag - Paoletti secondo</a></li>
+            <li><a href="https://www.sevenpress.com/motonautica-f1-show-di-paoletti-ma-addio-nations-cup-per-1-punto/2014/03/14/63730/" target="_blank">Sevenpress - Show di Paoletti</a></li>
+            <!-- Aggiungi altri link se vuoi -->
+        </ul>
     </div>
-  </section>
-</main>
+
+    <div class="lang lang-en">
+        <h2>Biography</h2>
+        <p>Stefano Paoletti, born in Miane (Italy), is one of the most prominent Italian powerboat drivers of recent years...</p>
+        <h2>Main Achievements</h2>
+        <p>Formula 1000 Inshore<br/>
+        • 2011: 1st Italian Championship<br/>
+        • 2010: 1st FIM Trophy, 2nd World F1000<br/>
+        • 2013: 3rd World Cup F1000<br/>
+        • Multiple Top 5 finishes 2008-2012</p>
+        <p>UIM Nations Cup<br/>
+        • Abu Dhabi 2013: Match Race Winner, 3rd Sprint 2, 2nd Team<br/>
+        • Doha 2014: Pole, Match Race Winner, Sprint 1 and 2 Winner, 2nd Team by 1 point</p>
+
+        <h2>Press & Media</h2>
+        <ul>
+            <li><a href="https://www.gulf-times.com/story/384489/paoletti-wins-sprints-as-belarus-take-nations-cup" target="_blank">Gulf Times - Paoletti wins sprints</a></li>
+            <li><a href="https://www.h2onationscup.com/post/brilliant-paoletti-wins-sprint-races-team-belarus-win-nations-cup-in-qatar" target="_blank">H2O Nations Cup - Sprint Races Doha</a></li>
+            <li><a href="https://www.boatmag.it/nations-cup-di-motonautica-inshore-stefano-paoletti-secondo/" target="_blank">BoatMag - Paoletti secondo</a></li>
+            <li><a href="https://www.sevenpress.com/motonautica-f1-show-di-paoletti-ma-addio-nations-cup-per-1-punto/2014/03/14/63730/" target="_blank">Sevenpress - Paoletti show</a></li>
+            <!-- Add more links if you want -->
+        </ul>
+    </div>
+
+    <h2>Gallery</h2>
+    <div class="gallery">
+        <img src="https://live.staticflickr.com/IMAGE1_LINK_HERE" alt="Gallery Image 1">
+        <img src="https://live.staticflickr.com/IMAGE2_LINK_HERE" alt="Gallery Image 2">
+        <img src="https://live.staticflickr.com/IMAGE3_LINK_HERE" alt="Gallery Image 3">
+        <img src="https://live.staticflickr.com/IMAGE4_LINK_HERE" alt="Gallery Image 4">
+    </div>
+</section>
 
 <footer>
-  Creato dall'AI
+    Generato dall'AI
 </footer>
 
 </body>

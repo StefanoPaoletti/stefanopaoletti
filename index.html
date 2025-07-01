@@ -2,16 +2,9 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sito ufficiale di Stefano Paoletti, pilota della nazionale italiana di motonautica">
-  <meta name="keywords" content="Stefano Paoletti, motonautica, UIM, Nations Cup, pilota italiano">
-  <meta name="author" content="Stefano Paoletti">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stefano Paoletti</title>
-  <link rel="icon" type="image/png" href="images/favicon.png">
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -57,25 +50,12 @@
     }
     .gallery {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
     }
-    .gallery img.panorama {
+    .gallery img {
       max-width: 100%;
-      margin: 1em auto;
-      display: block;
-    }
-    .gallery img.horizontal {
-      width: 100%;
-      max-width: 280px;
-      margin: 0.5em;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-    .gallery img.vertical {
-      width: 100%;
-      max-width: 180px;
-      margin: 0.5em;
+      margin: 1em 0;
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
@@ -102,15 +82,6 @@
       color: #fff;
       margin-top: 2em;
       font-size: 0.9em;
-    }
-    @media (max-width: 600px) {
-      section {
-        padding: 1em;
-      }
-      .gallery img.horizontal, .gallery img.vertical {
-        max-width: 100%;
-        margin: 0.5em auto;
-      }
     }
   </style>
 </head>
@@ -159,29 +130,29 @@
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery">
-      <img src="https://live.staticflickr.com/2812/11833343145_e6c9d2f1c3_b.jpg" alt="Panoramica di Stefano Paoletti in gara a Doha 2014" class="panorama" loading="lazy">
-      <img src="https://live.staticflickr.com/3682/11833760063_8e75719c5b_b.jpg" alt="Stefano Paoletti in azione su motonautica" class="horizontal" loading="lazy">
-      <img src="https://live.staticflickr.com/2882/11833903034_68d4422f4f_b.jpg" alt="Stefano Paoletti durante una competizione UIM" class="horizontal" loading="lazy">
-      <img src="https://live.staticflickr.com/2870/11833272405_b2b0f84807_b.jpg" alt="Gara di motonautica con Stefano Paoletti" class="horizontal" loading="lazy">
-      <img src="https://live.staticflickr.com/7405/11833193683_801d8b71ec_b.jpg" alt="Stefano Paoletti in curva stretta" class="horizontal" loading="lazy">
-      <img src="https://live.staticflickr.com/5102/5860099991_3981a9e235_c.jpg" alt="Stefano Paoletti in competizione F1000" class="horizontal" loading="lazy">
-      <img src="https://live.staticflickr.com/5277/5860651962_7fe82cb5c6_c.jpg" alt="Momento di gara di Stefano Paoletti" class="horizontal" loading="lazy">
-      <img src="https://live.staticflickr.com/3797/11833548113_f05d2df699_b.jpg" alt="Stefano Paoletti in sprint" class="horizontal" loading="lazy">
-      <img src="https://live.staticflickr.com/3793/11833283765_8974acdaf2_b.jpg" alt="Stefano Paoletti su motonautica" class="horizontal" loading="lazy">
-      <img src="https://live.staticflickr.com/7454/11834061486_18ba3a0e95_b.jpg" alt="Stefano Paoletti in azione verticale" class="vertical" loading="lazy">
-      <img src="https://live.staticflickr.com/7383/11833577053_98ae77abd4_b.jpg" alt="Stefano Paoletti in gara ravvicinata" class="vertical" loading="lazy">
+      <img src="https://live.staticflickr.com/2812/11833343145_e6c9d2f1c3_b.jpg" alt="Panoramica">
+      <img src="https://live.staticflickr.com/3682/11833760063_8e75719c5b_b.jpg" alt="Orizzontale 1">
+      <img src="https://live.staticflickr.com/2882/11833903034_68d4422f4f_b.jpg" alt="Orizzontale 2">
+      <img src="https://live.staticflickr.com/2870/11833272405_b2b0f84807_b.jpg" alt="Orizzontale 3">
+      <img src="https://live.staticflickr.com/7405/11833193683_801d8b71ec_b.jpg" alt="Orizzontale 4">
+      <img src="https://live.staticflickr.com/5102/5860099991_3981a9e235_c.jpg" alt="Orizzontale 5">
+      <img src="https://live.staticflickr.com/5277/5860651962_7fe82cb5c6_c.jpg" alt="Orizzontale 6">
+      <img src="https://live.staticflickr.com/3797/11833548113_f05d2df699_b.jpg" alt="Orizzontale 7">
+      <img src="https://live.staticflickr.com/3793/11833283765_8974acdaf2_b.jpg" alt="Orizzontale 8">
+      <img src="https://live.staticflickr.com/7454/11834061486_18ba3a0e95_b.jpg" alt="Verticale 1">
+      <img src="https://live.staticflickr.com/7383/11833577053_98ae77abd4_b.jpg" alt="Verticale 2">
     </div>
   </section>
 
   <div class="instagram">
     <a href="https://www.instagram.com/stefanopaoletti_27" target="_blank">
-      <img src="images/instagram-icon.png" alt="Icona Instagram" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
       @stefanopaoletti_27
     </a>
   </div>
 
   <footer>
-    <p>© 2025 Stefano Paoletti. Tutti i diritti riservati.</p>
+    <p>&copy; 2025 Stefano Paoletti. Generato dall'AI.</p>
   </footer>
 </body>
 </html>

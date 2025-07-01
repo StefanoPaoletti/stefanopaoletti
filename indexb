@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sito ufficiale di Stefano Paoletti, pilota della nazionale italiana di motonautica">
+  <meta name="keywords" content="Stefano Paoletti, motonautica, UIM, Nations Cup, pilota italiano">
+  <meta name="author" content="Stefano Paoletti">
+  <title>Stefano Paoletti</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #111;
+      color: #fff;
+      padding: 2em 1em;
+      text-align: center;
+    }
+    nav {
+      background: #222;
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      padding: 0.7em;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 2em;
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      margin-top: 1.5em;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.3em;
+      margin-top: 0;
+      color: #222;
+    }
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .gallery img {
+      max-width: 100%;
+      margin: 1em 0;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .instagram {
+      text-align: center;
+      margin-top: 2em;
+    }
+    .instagram a {
+      text-decoration: none;
+      color: #E1306C;
+      font-size: 1.2em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+    .instagram img {
+      width: 24px;
+      height: 24px;
+    }
+    footer {
+      text-align: center;
+      padding: 1em;
+      background: #111;
+      color: #fff;
+      margin-top: 2em;
+      font-size: 0.9em;
+    }
+    @media (max-width: 600px) {
+      section {
+        padding: 1em;
+      }
+      .gallery img {
+        max-width: 100%;
+        margin: 0.5em 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Stefano Paoletti</h1>
+    <p>Pilota ufficiale della nazionale italiana – Competizioni internazionali UIM</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#bio">Biografia</a>
+    <a href="#palmares">Palmarès</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+
+  <section id="home">
+    <h2>Benvenuto</h2>
+    <p>Stefano Paoletti ha lasciato un segno nel mondo della motonautica internazionale. Uno stile di guida deciso, pulito e senza compromessi. Un pilota che ha fatto parlare i cronometri e il pubblico, sempre con il gas spalancato e la testa lucida. Questo è il suo spazio.</p>
+    <p>Indimenticabile la sua performance a Doha 2014: tre vittorie in tre gare, pole position e un dominio assoluto sulle acque del Golfo Persico. Peccato che, per un solo punto e a causa della sfortuna del compagno di squadra, l’Italia non conquistò la Nations Cup. Un weekend leggendario, lo show di Paoletti tra onde, fatica e talento puro. Mamma, che fatica… ma che spettacolo!</p>
+  </section>
+
+  <section id="bio">
+    <h2>Biografia</h2>
+    <p>La storia agonistica di Stefano Paoletti inizia nel 2008. Dopo la conquista del Campionato Italiano F1000, entra nel giro della nazionale italiana, portando il tricolore in alto nelle competizioni più prestigiose al mondo: Nations Cup, F1H2O e Mondiali UIM. Il suo stile aggressivo ma chirurgico lo rende uno dei piloti più rispettati della sua generazione.</p>
+    <p>Nel 2014, con il Team Italia-Motorglass diretto da Francesco Cantando, domina la tappa di Doha con una tripletta mai vista: Match Race, Sprint 1 e Sprint 2. Eppure, per un solo punto, il team manca la vittoria finale, tra sorteggi beffardi e barche "bolse". Come disse lo stesso Paoletti: “A un certo punto la barca faceva tutto da sola… salti, voli e virate non richieste!”.</p>
+    <p>Paoletti ha partecipato alle competizioni internazionali come pilota inviato dal CONI, rappresentando l'Italia nei massimi livelli della motonautica.</p>
+  </section>
+
+  <section id="palmares">
+    <h2>Palmarès</h2>
+    <h3>Formula 1000 Inshore</h3>
+    <ul>
+      <li>2010: 1° Campionato Italiano, 2° Mondiale F1000</li>
+      <li>2011: 1° Campionato Italiano</li>
+      <li>2013: 3° Coppa del Mondo F1000</li>
+      <li>Numerosi piazzamenti Top 5 (2008–2012)</li>
+    </ul>
+    <h3>UIM Nations Cup</h3>
+    <ul>
+      <li>Abu Dhabi 2013: Vittoria Match Race, 3° Sprint 2, 2° Team</li>
+      <li>Doha 2014: Pole, Vittoria Match Race, Vittorie Sprint 1 e 2, 2° Team per 1 punto</li>
+    </ul>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://live.staticflickr.com/2812/11833343145_e6c9d2f1c3_b.jpg" alt="Panoramica di Stefano Paoletti in gara a Doha 2014" loading="lazy">
+      <img src="https://live.staticflickr.com/3682/11833760063_8e75719c5b_b.jpg" alt="Stefano Paoletti in azione su motonautica" loading="lazy">
+      <img src="https://live.staticflickr.com/2882/11833903034_68d4422f4f_b.jpg" alt="Stefano Paoletti durante una competizione UIM" loading="lazy">
+      <img src="https://live.staticflickr.com/2870/11833272405_b2b0f84807_b.jpg" alt="Gara di motonautica con Stefano Paoletti" loading="lazy">
+      <img src="https://live.staticflickr.com/7405/11833193683_801d8b71ec_b.jpg" alt="Stefano Paoletti in curva stretta" loading="lazy">
+      <img src="https://live.staticflickr.com/5102/5860099991_3981a9e235_c.jpg" alt="Stefano Paoletti in competizione F1000" loading="lazy">
+      <img src="https://live.staticflickr.com/5277/5860651962_7fe82cb5c6_c.jpg" alt="Momento di gara di Stefano Paoletti" loading="lazy">
+      <img src="https://live.staticflickr.com/3797/11833548113_f05d2df699_b.jpg" alt="Stefano Paoletti in sprint" loading="lazy">
+      <img src="https://live.staticflickr.com/3793/11833283765_8974acdaf2_b.jpg" alt="Stefano Paoletti su motonautica" loading="lazy">
+      <img src="https://live.staticflickr.com/7454/11834061486_18ba3a0e95_b.jpg" alt="Stefano Paoletti in azione verticale" loading="lazy">
+      <img src="https://live.staticflickr.com/7383/11833577053_98ae77abd4_b.jpg" alt="Stefano Paoletti in gara ravvicinata" loading="lazy">
+    </div>
+  </section>
+
+  <div class="instagram">
+    <a href="https://www.instagram.com/stefanopaoletti_27" target="_blank">
+      <img src="images/instagram-icon.png" alt="Icona Instagram" loading="lazy">
+      @stefanopaoletti_27
+    </a>
+    <!-- Opzione alternativa con link esterno:
+    <a href="https://www.instagram.com/stefanopaoletti_27" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Icona Instagram" loading="lazy">
+      @stefanopaoletti_27
+    </a>
+    -->
+  </div>
+
+  <footer>
+    <p>© 2025 Stefano Paoletti. Tutti i diritti riservati.</p>
+  </footer>
+</body>
+</html>

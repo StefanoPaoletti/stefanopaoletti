@@ -1,157 +1,198 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Stefano Paoletti - Pilota di motonautica</title>
-    <style>
-        body {
-            background-color: #121212;
-            color: #f0f0f0;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: url('https://live.staticflickr.com/2812/11833343145_e6c9d2f1c3_b.jpg') center center / cover no-repeat;
-            height: 50vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-        }
-        header h1 {
-            background-color: rgba(0,0,0,0.5);
-            padding: 20px;
-            font-size: 2em;
-            border-radius: 10px;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-        nav button {
-            background: #333;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            margin: 0 10px;
-            cursor: pointer;
-            font-size: 1em;
-            border-radius: 5px;
-        }
-        nav button:hover {
-            background: #555;
-        }
-        section {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-        .gallery img {
-            max-width: 300px;
-            width: 100%;
-            border-radius: 8px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #888;
-            border-top: 1px solid #333;
-            margin-top: 40px;
-        }
-        .lang {
-            display: none;
-        }
-    </style>
-    <script>
-        function setLanguage(lang) {
-            document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
-            document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'block');
-        }
-        window.onload = function() {
-            setLanguage('it'); // default to Italian
-        };
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stefano Paoletti</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #111;
+      color: #fff;
+      padding: 2em 1em;
+      text-align: center;
+      position: relative;
+    }
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .lang-switch img {
+      width: 28px;
+      height: 20px;
+      cursor: pointer;
+      margin-left: 10px;
+      border: 2px solid transparent;
+    }
+    .lang-switch img:hover {
+      border: 2px solid #fff;
+    }
+    nav {
+      background: #222;
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      padding: 0.7em;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 2em;
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      margin-top: 1.5em;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.3em;
+      margin-top: 0;
+      color: #222;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .gallery img {
+      width: 100%;
+      max-width: 280px;
+      margin: 0.5em;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .instagram {
+      text-align: center;
+      margin-top: 2em;
+    }
+    .instagram a {
+      text-decoration: none;
+      color: #E1306C;
+      font-size: 1.2em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+    .instagram img {
+      width: 24px;
+      height: 24px;
+    }
+    footer {
+      text-align: center;
+      padding: 1em;
+      background: #111;
+      color: #fff;
+      margin-top: 2em;
+      font-size: 0.9em;
+    }
+  </style>
+  <script>
+    function switchLanguage(lang) {
+      document.querySelectorAll('[lang]').forEach(el => {
+        el.style.display = el.getAttribute('lang') === lang ? 'block' : 'none';
+      });
+    }
+  </script>
 </head>
-<body>
-
-<header>
-    <h1>Stefano Paoletti - Pilota di motonautica</h1>
-</header>
-
-<nav>
-    <button onclick="setLanguage('it')">🇮🇹 Italiano</button>
-    <button onclick="setLanguage('en')">🇬🇧 English</button>
-</nav>
-
-<section>
-    <div class="lang lang-it">
-        <h2>Biografia</h2>
-        <p>Stefano Paoletti, nato a Miane (TV), è uno dei più brillanti piloti italiani di motonautica degli ultimi anni...</p>
-        <h2>Palmarès</h2>
-        <p>Formula 1000 Inshore<br/>
-        • 2011: 1° Campionato Italiano<br/>
-        • 2010: 1° Trofeo FIM, 2° Mondiale F1000<br/>
-        • 2013: 3° Coppa del Mondo F1000<br/>
-        • Numerosi piazzamenti Top 5 2008-2012</p>
-        <p>UIM Nations Cup<br/>
-        • Abu Dhabi 2013: Vittoria Match Race, 3° Sprint 2, 2° Team<br/>
-        • Doha 2014: Pole, Vittoria Match Race, Vittorie Sprint 1 e 2, 2° Team per 1 punto</p>
-
-        <h2>Press & Media</h2>
-        <ul>
-            <li><a href="https://www.gulf-times.com/story/384489/paoletti-wins-sprints-as-belarus-take-nations-cup" target="_blank">Gulf Times - Paoletti wins sprints</a></li>
-            <li><a href="https://www.h2onationscup.com/post/brilliant-paoletti-wins-sprint-races-team-belarus-win-nations-cup-in-qatar" target="_blank">H2O Nations Cup - Sprint Races Doha</a></li>
-            <li><a href="https://www.boatmag.it/nations-cup-di-motonautica-inshore-stefano-paoletti-secondo/" target="_blank">BoatMag - Paoletti secondo</a></li>
-            <li><a href="https://www.sevenpress.com/motonautica-f1-show-di-paoletti-ma-addio-nations-cup-per-1-punto/2014/03/14/63730/" target="_blank">Sevenpress - Show di Paoletti</a></li>
-            <!-- Aggiungi altri link se vuoi -->
-        </ul>
+<body onload="switchLanguage('it')">
+  <header>
+    <h1>Stefano Paoletti</h1>
+    <p lang="it">Pilota ufficiale della nazionale italiana – Competizioni internazionali UIM</p>
+    <p lang="en" style="display:none">Official driver of the Italian national team – International UIM competitions</p>
+    <div class="lang-switch">
+      <img src="https://flagcdn.com/w40/it.png" alt="Italiano" onclick="switchLanguage('it')">
+      <img src="https://flagcdn.com/w40/gb.png" alt="English" onclick="switchLanguage('en')">
     </div>
+  </header>
 
-    <div class="lang lang-en">
-        <h2>Biography</h2>
-        <p>Stefano Paoletti, born in Miane (Italy), is one of the most prominent Italian powerboat drivers of recent years...</p>
-        <h2>Main Achievements</h2>
-        <p>Formula 1000 Inshore<br/>
-        • 2011: 1st Italian Championship<br/>
-        • 2010: 1st FIM Trophy, 2nd World F1000<br/>
-        • 2013: 3rd World Cup F1000<br/>
-        • Multiple Top 5 finishes 2008-2012</p>
-        <p>UIM Nations Cup<br/>
-        • Abu Dhabi 2013: Match Race Winner, 3rd Sprint 2, 2nd Team<br/>
-        • Doha 2014: Pole, Match Race Winner, Sprint 1 and 2 Winner, 2nd Team by 1 point</p>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#bio">Biografia</a>
+    <a href="#palmares">Palmarès</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
 
-        <h2>Press & Media</h2>
-        <ul>
-            <li><a href="https://www.gulf-times.com/story/384489/paoletti-wins-sprints-as-belarus-take-nations-cup" target="_blank">Gulf Times - Paoletti wins sprints</a></li>
-            <li><a href="https://www.h2onationscup.com/post/brilliant-paoletti-wins-sprint-races-team-belarus-win-nations-cup-in-qatar" target="_blank">H2O Nations Cup - Sprint Races Doha</a></li>
-            <li><a href="https://www.boatmag.it/nations-cup-di-motonautica-inshore-stefano-paoletti-secondo/" target="_blank">BoatMag - Paoletti secondo</a></li>
-            <li><a href="https://www.sevenpress.com/motonautica-f1-show-di-paoletti-ma-addio-nations-cup-per-1-punto/2014/03/14/63730/" target="_blank">Sevenpress - Paoletti show</a></li>
-            <!-- Add more links if you want -->
-        </ul>
+  <section id="home">
+    <div lang="it">
+      <h2>Benvenuto</h2>
+      <p>Stefano Paoletti ha lasciato un segno nel mondo della motonautica internazionale. Uno stile di guida deciso, pulito e senza compromessi. Un pilota che ha fatto parlare i cronometri e il pubblico, sempre con il gas spalancato e la testa lucida. Questo è il suo spazio.</p>
+      <p>Indimenticabile la sua performance a Doha 2014: tre vittorie in tre gare, pole position e un dominio assoluto sulle acque del Golfo Persico. Peccato che, per un solo punto e a causa della sfortuna del compagno di squadra, l’Italia non conquistò la Nations Cup. Un weekend leggendario, lo show di Paoletti tra onde, fatica e talento puro. Mamma, che fatica… ma che spettacolo!</p>
     </div>
+    <div lang="en" style="display:none">
+      <h2>Welcome</h2>
+      <p>Stefano Paoletti made his mark in the world of international powerboating. A clean, aggressive driving style with no compromises. A racer who let the stopwatch and the crowd do the talking. This is his space.</p>
+      <p>His performance in Doha 2014 was unforgettable: three wins in three races, pole position, and total dominance on the waters of the Persian Gulf. Unfortunately, due to bad luck with his teammate’s boat, Team Italy missed out on the Nations Cup by just one point. A legendary weekend. Pure fatigue, pure talent. What a show!</p>
+    </div>
+  </section>
 
+  <section id="bio">
+    <h2 lang="it">Biografia</h2>
+    <h2 lang="en" style="display:none">Biography</h2>
+    <p lang="it">La storia agonistica di Stefano Paoletti inizia nel 2008. Dopo la conquista del Campionato Italiano F1000, entra nel giro della nazionale italiana, portando il tricolore in alto nelle competizioni più prestigiose al mondo: Nations Cup, F1H2O e Mondiali UIM. Il suo stile aggressivo ma chirurgico lo rende uno dei piloti più rispettati della sua generazione.</p>
+    <p lang="it">Nel 2014, con il Team Italia-Motorglass diretto da Francesco Cantando, domina la tappa di Doha con una tripletta mai vista: Match Race, Sprint 1 e Sprint 2. Eppure, per un solo punto, il team manca la vittoria finale, tra sorteggi beffardi e barche "bolse". Come disse lo stesso Paoletti: “A un certo punto la barca faceva tutto da sola… salti, voli e virate non richieste!”.</p>
+    <p lang="it">Paoletti ha partecipato alle competizioni internazionali come pilota inviato dal CONI, rappresentando l'Italia nei massimi livelli della motonautica.</p>
+    <p lang="en" style="display:none">Stefano Paoletti began his racing career in 2008. After winning the Italian F1000 Championship, he joined the Italian national team and proudly carried the tricolor in top-level competitions: Nations Cup, F1H2O, and UIM World Championships. His aggressive yet precise style made him one of the most respected drivers of his generation.</p>
+    <p lang="en" style="display:none">In 2014, under the guidance of Francesco Cantando, Paoletti dominated the Nations Cup round in Doha, sweeping the Match Race and both Sprint races. Yet, due to unlucky equipment draw and teammate issues, the team narrowly missed the overall win. “At one point,” said Paoletti, “the boat was doing its own thing — jumps, spins, weird turns!”</p>
+    <p lang="en" style="display:none">He represented Italy internationally as an official CONI delegate, racing at the highest level of global powerboat sport.</p>
+  </section>
+
+  <section id="palmares">
+    <h2>Palmarès</h2>
+    <h3>Formula 1000 Inshore</h3>
+    <ul>
+      <li>2010: 1° Campionato Italiano, 2° Mondiale F1000</li>
+      <li>2011: 1° Campionato Italiano</li>
+      <li>2013: 3° Coppa del Mondo F1000</li>
+      <li>Numerosi piazzamenti Top 5 (2008–2012)</li>
+    </ul>
+    <h3>UIM Nations Cup</h3>
+    <ul>
+      <li>Abu Dhabi 2013: Vittoria Match Race, 3° Sprint 2, 2° Team</li>
+      <li>Doha 2014: Pole, Vittoria Match Race, Vittorie Sprint 1 e 2, 2° Team per 1 punto</li>
+    </ul>
+  </section>
+
+  <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery">
-        <img src="https://live.staticflickr.com/IMAGE1_LINK_HERE" alt="Gallery Image 1">
-        <img src="https://live.staticflickr.com/IMAGE2_LINK_HERE" alt="Gallery Image 2">
-        <img src="https://live.staticflickr.com/IMAGE3_LINK_HERE" alt="Gallery Image 3">
-        <img src="https://live.staticflickr.com/IMAGE4_LINK_HERE" alt="Gallery Image 4">
+      <img src="https://live.staticflickr.com/3713/11362434616_6e2a7859d4_b.jpg" alt="1">
+      <img src="https://live.staticflickr.com/5483/11362377735_02867b1cbe_b.jpg" alt="2">
+      <img src="https://live.staticflickr.com/3788/11362484204_1d5a59e84f_b.jpg" alt="3">
+      <img src="https://live.staticflickr.com/3845/11362494623_aa01d5bfea_b.jpg" alt="4">
+      <img src="https://live.staticflickr.com/2847/11362383325_55d9425a7a_b.jpg" alt="5">
+      <img src="https://live.staticflickr.com/5487/11362370605_7749368e3c_b.jpg" alt="6">
+      <img src="https://live.staticflickr.com/3793/11362364145_48744b7a85_b.jpg" alt="7">
+      <img src="https://live.staticflickr.com/5303/11362433186_3dc2616f2a_b.jpg" alt="8">
+      <img src="https://live.staticflickr.com/3684/11362654303_3102b32b4f_b.jpg" alt="9">
+      <img src="https://live.staticflickr.com/3771/11362444776_6b41e2ab27_b.jpg" alt="10">
+      <img src="https://live.staticflickr.com/5480/11362417434_b6e7ff6d66_b.jpg" alt="11">
     </div>
-</section>
+  </section>
 
-<footer>
-    Generato dall'AI
-</footer>
+  <div class="instagram">
+    <a href="https://www.instagram.com/stefanopaoletti_27" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+      @stefanopaoletti_27
+    </a>
+  </div>
 
+  <footer>
+    <p>&copy; 2025 Stefano Paoletti. Generato dall'AI.</p>
+  </footer>
 </body>
 </html>

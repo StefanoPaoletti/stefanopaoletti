@@ -16,22 +16,6 @@
       color: #fff;
       padding: 2em 1em;
       text-align: center;
-      position: relative;
-    }
-    .lang-switch {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-    .lang-switch img {
-      width: 28px;
-      height: 20px;
-      cursor: pointer;
-      margin-left: 10px;
-      border: 2px solid transparent;
-    }
-    .lang-switch img:hover {
-      border: 2px solid #fff;
     }
     nav {
       background: #222;
@@ -69,9 +53,21 @@
       flex-wrap: wrap;
       justify-content: center;
     }
-    .gallery img {
+    .gallery img.panorama {
+      max-width: 100%;
+      margin: 1em auto;
+      display: block;
+    }
+    .gallery img.horizontal {
       width: 100%;
       max-width: 280px;
+      margin: 0.5em;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .gallery img.vertical {
+      width: 100%;
+      max-width: 180px;
       margin: 0.5em;
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -101,23 +97,11 @@
       font-size: 0.9em;
     }
   </style>
-  <script>
-    function switchLanguage(lang) {
-      document.querySelectorAll('[lang]').forEach(el => {
-        el.style.display = el.getAttribute('lang') === lang ? 'block' : 'none';
-      });
-    }
-  </script>
 </head>
-<body onload="switchLanguage('it')">
+<body>
   <header>
     <h1>Stefano Paoletti</h1>
-    <p lang="it">Pilota ufficiale della nazionale italiana – Competizioni internazionali UIM</p>
-    <p lang="en" style="display:none">Official driver of the Italian national team – International UIM competitions</p>
-    <div class="lang-switch">
-      <img src="https://flagcdn.com/w40/it.png" alt="Italiano" onclick="switchLanguage('it')">
-      <img src="https://flagcdn.com/w40/gb.png" alt="English" onclick="switchLanguage('en')">
-    </div>
+    <p>Pilota ufficiale della nazionale italiana – Competizioni internazionali UIM</p>
   </header>
 
   <nav>
@@ -128,27 +112,16 @@
   </nav>
 
   <section id="home">
-    <div lang="it">
-      <h2>Benvenuto</h2>
-      <p>Stefano Paoletti ha lasciato un segno nel mondo della motonautica internazionale. Uno stile di guida deciso, pulito e senza compromessi. Un pilota che ha fatto parlare i cronometri e il pubblico, sempre con il gas spalancato e la testa lucida. Questo è il suo spazio.</p>
-      <p>Indimenticabile la sua performance a Doha 2014: tre vittorie in tre gare, pole position e un dominio assoluto sulle acque del Golfo Persico. Peccato che, per un solo punto e a causa della sfortuna del compagno di squadra, l’Italia non conquistò la Nations Cup. Un weekend leggendario, lo show di Paoletti tra onde, fatica e talento puro. Mamma, che fatica… ma che spettacolo!</p>
-    </div>
-    <div lang="en" style="display:none">
-      <h2>Welcome</h2>
-      <p>Stefano Paoletti made his mark in the world of international powerboating. A clean, aggressive driving style with no compromises. A racer who let the stopwatch and the crowd do the talking. This is his space.</p>
-      <p>His performance in Doha 2014 was unforgettable: three wins in three races, pole position, and total dominance on the waters of the Persian Gulf. Unfortunately, due to bad luck with his teammate’s boat, Team Italy missed out on the Nations Cup by just one point. A legendary weekend. Pure fatigue, pure talent. What a show!</p>
-    </div>
+    <h2>Benvenuto</h2>
+    <p>Stefano Paoletti ha lasciato un segno nel mondo della motonautica internazionale. Uno stile di guida deciso, pulito e senza compromessi. Un pilota che ha fatto parlare i cronometri e il pubblico, sempre con il gas spalancato e la testa lucida. Questo è il suo spazio.</p>
+    <p>Indimenticabile la sua performance a Doha 2014: tre vittorie in tre gare, pole position e un dominio assoluto sulle acque del Golfo Persico. Peccato che, per un solo punto e a causa della sfortuna del compagno di squadra, l’Italia non conquistò la Nations Cup. Un weekend leggendario, lo show di Paoletti tra onde, fatica e talento puro. Mamma, che fatica… ma che spettacolo!</p>
   </section>
 
   <section id="bio">
-    <h2 lang="it">Biografia</h2>
-    <h2 lang="en" style="display:none">Biography</h2>
-    <p lang="it">La storia agonistica di Stefano Paoletti inizia nel 2008. Dopo la conquista del Campionato Italiano F1000, entra nel giro della nazionale italiana, portando il tricolore in alto nelle competizioni più prestigiose al mondo: Nations Cup, F1H2O e Mondiali UIM. Il suo stile aggressivo ma chirurgico lo rende uno dei piloti più rispettati della sua generazione.</p>
-    <p lang="it">Nel 2014, con il Team Italia-Motorglass diretto da Francesco Cantando, domina la tappa di Doha con una tripletta mai vista: Match Race, Sprint 1 e Sprint 2. Eppure, per un solo punto, il team manca la vittoria finale, tra sorteggi beffardi e barche "bolse". Come disse lo stesso Paoletti: “A un certo punto la barca faceva tutto da sola… salti, voli e virate non richieste!”.</p>
-    <p lang="it">Paoletti ha partecipato alle competizioni internazionali come pilota inviato dal CONI, rappresentando l'Italia nei massimi livelli della motonautica.</p>
-    <p lang="en" style="display:none">Stefano Paoletti began his racing career in 2008. After winning the Italian F1000 Championship, he joined the Italian national team and proudly carried the tricolor in top-level competitions: Nations Cup, F1H2O, and UIM World Championships. His aggressive yet precise style made him one of the most respected drivers of his generation.</p>
-    <p lang="en" style="display:none">In 2014, under the guidance of Francesco Cantando, Paoletti dominated the Nations Cup round in Doha, sweeping the Match Race and both Sprint races. Yet, due to unlucky equipment draw and teammate issues, the team narrowly missed the overall win. “At one point,” said Paoletti, “the boat was doing its own thing — jumps, spins, weird turns!”</p>
-    <p lang="en" style="display:none">He represented Italy internationally as an official CONI delegate, racing at the highest level of global powerboat sport.</p>
+    <h2>Biografia</h2>
+    <p>La storia agonistica di Stefano Paoletti inizia nel 2008. Dopo la conquista del Campionato Italiano F1000, entra nel giro della nazionale italiana, portando il tricolore in alto nelle competizioni più prestigiose al mondo: Nations Cup, F1H2O e Mondiali UIM. Il suo stile aggressivo ma chirurgico lo rende uno dei piloti più rispettati della sua generazione.</p>
+    <p>Nel 2014, con il Team Italia-Motorglass diretto da Francesco Cantando, domina la tappa di Doha con una tripletta mai vista: Match Race, Sprint 1 e Sprint 2. Eppure, per un solo punto, il team manca la vittoria finale, tra sorteggi beffardi e barche "bolse". Come disse lo stesso Paoletti: “A un certo punto la barca faceva tutto da sola… salti, voli e virate non richieste!”.</p>
+    <p>Paoletti ha partecipato alle competizioni internazionali come pilota inviato dal CONI, rappresentando l'Italia nei massimi livelli della motonautica.</p>
   </section>
 
   <section id="palmares">
@@ -170,17 +143,17 @@
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery">
-      <img src="https://live.staticflickr.com/3713/11362434616_6e2a7859d4_b.jpg" alt="1">
-      <img src="https://live.staticflickr.com/5483/11362377735_02867b1cbe_b.jpg" alt="2">
-      <img src="https://live.staticflickr.com/3788/11362484204_1d5a59e84f_b.jpg" alt="3">
-      <img src="https://live.staticflickr.com/3845/11362494623_aa01d5bfea_b.jpg" alt="4">
-      <img src="https://live.staticflickr.com/2847/11362383325_55d9425a7a_b.jpg" alt="5">
-      <img src="https://live.staticflickr.com/5487/11362370605_7749368e3c_b.jpg" alt="6">
-      <img src="https://live.staticflickr.com/3793/11362364145_48744b7a85_b.jpg" alt="7">
-      <img src="https://live.staticflickr.com/5303/11362433186_3dc2616f2a_b.jpg" alt="8">
-      <img src="https://live.staticflickr.com/3684/11362654303_3102b32b4f_b.jpg" alt="9">
-      <img src="https://live.staticflickr.com/3771/11362444776_6b41e2ab27_b.jpg" alt="10">
-      <img src="https://live.staticflickr.com/5480/11362417434_b6e7ff6d66_b.jpg" alt="11">
+      <img src="https://live.staticflickr.com/2812/11833343145_e6c9d2f1c3_b.jpg" alt="panoramica" class="panorama">
+      <img src="https://live.staticflickr.com/3682/11833760063_8e75719c5b_b.jpg" alt="orizzontale 1" class="horizontal">
+      <img src="https://live.staticflickr.com/2882/11833903034_68d4422f4f_b.jpg" alt="orizzontale 2" class="horizontal">
+      <img src="https://live.staticflickr.com/2870/11833272405_b2b0f84807_b.jpg" alt="orizzontale 3" class="horizontal">
+      <img src="https://live.staticflickr.com/7405/11833193683_801d8b71ec_b.jpg" alt="orizzontale 4" class="horizontal">
+      <img src="https://live.staticflickr.com/5102/5860099991_3981a9e235_c.jpg" alt="orizzontale 5" class="horizontal">
+      <img src="https://live.staticflickr.com/5277/5860651962_7fe82cb5c6_c.jpg" alt="orizzontale 6" class="horizontal">
+      <img src="https://live.staticflickr.com/3797/11833548113_f05d2df699_b.jpg" alt="orizzontale 7" class="horizontal">
+      <img src="https://live.staticflickr.com/3793/11833283765_8974acdaf2_b.jpg" alt="orizzontale 8" class="horizontal">
+      <img src="https://live.staticflickr.com/7454/11834061486_18ba3a0e95_b.jpg" alt="verticale 1" class="vertical">
+      <img src="https://live.staticflickr.com/7383/11833577053_98ae77abd4_b.jpg" alt="verticale 2" class="vertical">
     </div>
   </section>
 

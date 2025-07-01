@@ -1,62 +1,115 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8atown">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La mia stazione meteo Ecowitt</title>
+    <title>Stazione Meteo Ecowitt</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
             margin: 0;
-            padding: 20px;
-            background-color: #f0f0f0;
-            color: #333;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
         header {
-            background-color: #007bff;
-            color: white;
-            padding: 15px;
-            border-radius: 5px;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(45deg, #ff0066, #ffcc00);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 0, 102, 0.5);
+            animation: slideIn 1s ease-out;
             margin-bottom: 20px;
         }
         h1 {
+            font-size: 2.5em;
             margin: 0;
-            font-size: 2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
         }
         p {
-            margin: 10px 0;
+            font-size: 1.2em;
+            margin: 10px 0 0;
+            opacity: 0.9;
+        }
+        .iframe-container {
+            width: 90%;
+            max-width: 1200px;
+            height: 800px;
+            border: 2px solid #ff0066;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(255, 0, 102, 0.3);
+            animation: fadeIn 1.5s ease-out;
+            background-color: #ffffff;
         }
         iframe {
             width: 100%;
-            height: 800px;
+            height: 100%;
             border: none;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-            background-color: white;
         }
         footer {
             margin-top: 20px;
             font-size: 0.9em;
-            color: #555;
+            opacity: 0.8;
         }
-        @media (max-width: 600px) {
-            iframe {
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: #ff0066;
+            text-shadow: 0 0 5px rgba(255, 0, 102, 0.8);
+        }
+        /* Animazioni */
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .iframe-container {
                 height: 600px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            p {
+                font-size: 1em;
+            }
+        }
+        @media (max-width: 480px) {
+            .iframe-container {
+                height: 500px;
             }
             h1 {
                 font-size: 1.5em;
             }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>La mia stazione meteo Ecowitt</h1>
-        <p>Dati in tempo reale dalla mia località</p>
+        <h1>Stazione Meteo Live</h1>
+        <p>Dati in tempo reale dalla mia Ecowitt</p>
     </header>
-    <iframe src="https://www.ecowitt.net/home/share?authorize=NS5F91"></iframe>
+    <div class="iframe-container">
+        <iframe src="https://www.ecowitt.net/home/share?authorize=NS5F91"></iframe>
+    </div>
     <footer>
-        <p>Powered by <a href="https://www.ecowitt.net" target="_blank">Ecowitt</a> | Visualizza i dati meteo in tempo reale</p>
+        <p>Powered by <a href="https://www.ecowitt.net" target="_blank">Ecowitt</a> | Design by You</p>
     </footer>
 </body>
 </html>

@@ -1,4 +1,4 @@
-const API_URL = 'https://i3h2ejsg2gaphd399bucrhkdljki9p8f.ui.nabu.casa/api/states';
+const API_URL = 'https://.ui.nabu.casa/api/states';
 const TOKEN = '[inserisci-il-nuovo-token-qui]'; // Solo per test locali, rimuovi prima di caricare su GitHub!
 
 // Funzione per recuperare i dati di un sensore

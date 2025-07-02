@@ -11,15 +11,15 @@
   <div class="container my-5">
     <h1 class="text-center mb-4">La mia stazione meteo Ecowitt</h1>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4 mb-3">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Temperatura</h5>
-            <p class="card-text" id="temperature">-- °C</p>
+            <h5 class="card-title">Temperatura Esterna</h5>
+            <p class="card-text" id="outdoor_temperature">-- °C</p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 mb-3">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Umidità</h5>
@@ -27,7 +27,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 mb-3">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Velocità del vento</h5>
@@ -35,10 +35,40 @@
           </div>
         </div>
       </div>
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Direzione del vento</h5>
+            <p class="card-text" id="wind_direction">-- °</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Pioggia oraria</h5>
+            <p class="card-text" id="hourly_rain_rate_piezo">-- mm/h</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Indice UV</h5>
+            <p class="card-text" id="uv_index">--</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-12">
+        <canvas id="temperatureChart"></canvas>
+      </div>
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
